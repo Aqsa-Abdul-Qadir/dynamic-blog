@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { client } from '@/sanity/lib/client';
+import Image from 'next/image'; // Import Image from next/image
 
 interface Blog {
-
   slug: string;
   name: string;
   subheading: string;
@@ -58,9 +58,11 @@ const BlogPosts: React.FC = () => {
             className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
           >
             {blog.image && (
-              <img
+              <Image
                 src={blog.image}
                 alt={blog.name}
+                width={400}
+                height={200}
                 className="w-full h-48 object-cover rounded-t-lg mb-4"
               />
             )}
